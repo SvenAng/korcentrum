@@ -1,4 +1,4 @@
-
+//Den mesta utveckling sker i denn fil
 
 
 .glugg-front-page{
@@ -173,19 +173,36 @@ h1{
 	font-weight: 300;
 }
 .zf-korcentrum_1col .event-meta,
-.mozaik-event .event-meta{
+.mozaik-event .event-meta,
+.small-event-meta{
 	border-left: 1px solid #bebebe;
 	padding-left: 8px;
 	line-height: 19px;
-	margin-bottom: 5px;
-	color: #999999;
+    margin-bottom: $column-gutter/2;
+//	color: #999999;
 	font-size: 80%;
 	font-weight: 300;
+    padding-bottom: 3px;
 }
 .zf-korcentrum_1col .event-meta{
 	margin-bottom: $column-gutter/2;
 	display: block;
 }
+aside.medium-event-meta{
+    margin-bottom: $column-gutter/2;
+    border-left: 1px solid #bebebe;
+    font-size: 80%;
+    font-weight: 300;
+    margin-left: $column-gutter/2;
+    padding-left: $column-gutter/4 !important;
+}
+aside.medium-event-meta .block{
+    margin-bottom: 1px !important;
+}
+
+
+
+
 .mozaik-event .mozaik-date{
 	
 }
@@ -194,6 +211,12 @@ h1{
 	/*font-style: italic;*/
 	
 }
+
+.field-name-field-datum,
+.field-name-field-plats{
+    display: inline-block;
+}
+
 
 .l-footer{
 	text-align: center;		
@@ -335,19 +358,36 @@ h1{
 .zf-korcentrum_1col .teaser-readmore,
 .node-blog .teaser-readmore,
 .field-name-field-anm-lan .teaser-readmore,
-li.node-readmore{
+li.node-readmore,
+.teaser-readmore{
 	background:  $primary-color;
 	color: #fff;
 	font-weight: 300;
 	padding: 6px 8px;
 	font-size: 0.7rem;
 	text-transform: uppercase;
+    
 	
+}
+.readmore-wrapper div{
+    margin-bottom: $column-gutter/4;
+}
+.readmore-wrapper .first{
+    margin-top: $column-gutter/4;
+}
+.readmore-wrapper .last{
+    margin-bottom: $column-gutter/4;
 }
 .zf-korcentrum_1col .readmore-wrapper{
 	padding-top: 8px;
 	padding-bottom: 5px;
 }
+//.zf-korcentrum_1col .readmore-wrapper div{
+//    margin-bottom: $column-gutter/4;
+//}
+//.zf-korcentrum_1col .readmore-wrapper .last{
+//    margin-bottom: $column-gutter/8;
+//}
 .zf-korcentrum_1col .date-display-range{
 	display: inline-block;
 }

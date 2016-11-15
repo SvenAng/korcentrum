@@ -68,6 +68,7 @@ regions[featured]            = Featured
 regions[content]             = Content
 regions[sidebar_first]       = Left Sidebar
 regions[sidebar_second]      = Right Sidebar
+regions[sidebar_second_eventmeta]      = Right Sidebar for event metadata
 regions[offcanvas]      = Offcanvas Meny
 regions[triptych_first]      = Callout one
 regions[footer_firstcolumn]  = Footer one

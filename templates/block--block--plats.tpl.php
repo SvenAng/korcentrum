@@ -47,14 +47,7 @@
 
   <?php print render($title_prefix); ?>
   <?php if ($block->subject): ?>
-<!--    Speciallösning för Event meta i block-->
-    <?php if ($block->delta == 'ed7c834e99a63d2d21ff968e86bd69da'): ?>
-        <strong class='label-inline'><?php print $block->subject ?>:</strong>
-    <?php elseif ($block->delta == '429d32ef715bbfcba4679a738c397cac'): ?>
-    <strong class='label-inline'><?php print $block->subject ?>:</strong>
-    <?php else: ?>
-        <h2<?php print $title_attributes; ?>><?php print $block->subject ?></h2>
-    <?php endif; ?>
+    <h1<?php print $title_attributes; ?>><?php print $block->subject ?></h1>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 

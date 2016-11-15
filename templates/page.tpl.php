@@ -175,7 +175,13 @@
               <?php print render($action_links); ?>
             </ul>
           <?php endif; ?>
-
+        
+            <?php if (!empty($page['sidebar_second_eventmeta'])): ?>
+            <aside role="complementary" class="small-event-meta visible-for-small-down">
+                <?php print render($page['sidebar_second_eventmeta']); ?>
+            </aside>
+            <?php endif; ?>
+            
           <?php print render($page['content']); ?>
         </div>
         <!--/.l-main region -->
@@ -185,8 +191,14 @@
             <?php print render($page['sidebar_first']); ?>
           </aside>
         <?php endif; ?>
-
-        <?php if (!empty($page['sidebar_second'])): ?>
+          
+        <?php if (!empty($page['sidebar_second_eventmeta'])): ?>
+          <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second medium-event-meta column visible-for-medium-up sidebar">
+              <?php print render($page['sidebar_second_eventmeta']); ?>
+          </aside>
+        <?php endif; ?>
+        
+          <?php if (!empty($page['sidebar_second'])): ?>
           <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
             <?php print render($page['sidebar_second']); ?>
           </aside>
