@@ -178,7 +178,7 @@ h1{
 	border-left: 1px solid #bebebe;
 	padding-left: 8px;
 	line-height: 19px;
-    margin-bottom: $column-gutter/2;
+    margin-bottom: $column-gutter/6;
 //	color: #999999;
 	font-size: 80%;
 	font-weight: 300;
@@ -213,10 +213,39 @@ aside.medium-event-meta .block{
 }
 
 .field-name-field-datum,
-.field-name-field-plats{
+.field-name-field-plats,
+.view-mode-front_teaser .date-display-range{
     display: inline-block;
 }
-
+.view-mode-front_teaser .date-display-range,
+.view-mode-front_teaser .label-inline{
+    
+}
+.mozaik-event .mozaik .view-mode-front_teaser h3{
+    font-size: 1.2rem;
+}
+.view-mode-front_teaser .meta-wrapper{
+    border-left: 1px solid #bebebe;
+    font-size: 80%;
+    font-weight: 300;
+//    margin-left: $column-gutter/2;
+    padding-left: $column-gutter/4 !important;
+    margin-bottom: $column-gutter/8;
+    font-size: 80%;
+    color: #888888;
+}
+.view-mode-front_teaser img{
+    margin-bottom: $column-gutter/2;
+}
+.view-mode-front_teaser strong,
+.view-mode-front_teaser p{
+    font-weight: 300;
+}
+.view-mode-front_teaser em,
+.view-mode-front_teaser i{
+    font-style: normal;
+    font-weight: 400;
+}
 
 .l-footer{
 	text-align: center;		
