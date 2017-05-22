@@ -24,11 +24,11 @@
         <div class="month"><?php print $custom_month; ?></div>
         <div class="year"><?php print $custom_year; ?></div>
       </div>
-      <?php //if ($avatar!=NULL): ?>
-        <!-- <div class="avatar_img"><?php //print $avatar; ?></div> -->
-        <?php //else: ?>
-         <!-- <div class="avatar_img"><img src="/sites/default/files/avatar/default-avatar.jpg"></div> -->
-        <?php //endif; ?>
+      <?php if ($avatar!=NULL): ?>
+         <div class="avatar_img"><?php print $avatar; ?></div> 
+        <?php else: ?>
+          <div class="avatar_img"><img src="/sites/default/files/avatar/default-avatar.jpg"></div> 
+        <?php endif; ?>
       
     </div>
     <div class="column medium-10">

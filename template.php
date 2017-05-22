@@ -193,23 +193,33 @@ function korcentrum_preprocess_page(&$variables) {
   }
 
   // Dynamic sidebars.
+  // om det finns i vänster och höger
   if (!empty($left) && !empty($right)) {
     $variables['main_grid'] = 'medium-6 medium-push-3';
     $variables['sidebar_first_grid'] = 'medium-3 medium-pull-6';
     $variables['sidebar_sec_grid'] = 'medium-3';
   }
+  // tomt i vänster finns i höger
   elseif (empty($left) && !empty($right)) {
     $variables['main_grid'] = 'medium-8';
     $variables['sidebar_first_grid'] = '';
     $variables['sidebar_sec_grid'] = 'medium-4';
   }
+  // finns i vänster tomt i höger
   elseif (!empty($left) && empty($right)) {
     $variables['main_grid'] = 'medium-9 medium-push-3';
     $variables['sidebar_first_grid'] = 'medium-3 medium-pull-9';
     $variables['sidebar_sec_grid'] = '';
   }
+  // annars
+  
   else {
-    $variables['main_grid'] = '';
+    if (drupal_is_front_page()) { // checkar om det är startsidan, för där ligger en tvåspalts vy
+      $wow = 'medium-12';
+    }else{
+      $wow = 'medium-8 medium-centered';
+    }
+    $variables['main_grid'] = $wow;
     $variables['sidebar_first_grid'] = '';
     $variables['sidebar_sec_grid'] = '';
   }

@@ -1,16 +1,20 @@
 
-
 <?php
   // Logik för bakgrundsbilderna. Bilder och färger sätts i components/background.scss
-  $node = node_load($node->nid); 
-  if($node->field_omr_de['und'][0]['tid'] == NULL && $is_front == true){
-    $tidd = "front";  
-  }elseif($node->field_omr_de['und'][0]['tid'] == NULL && $is_front == false){
-     $tidd = "normal";
-  }else{
-    $tidd = $node->field_omr_de['und'][0]['tid'];
-  }
+// Denna kan man villkora med $node->type == NULL
 // print $node->field_omr_de['und'][0]['tid'];
+// $node is not set for all pages
+// kontrollerar om sidan är en nod
+  if ( !empty($node) ) {
+    $node = node_load($node->nid); 
+    if($node->field_omr_de['und'][0]['tid'] == NULL){
+      $tidd = "normal";
+    }else{
+      $tidd = $node->field_omr_de['und'][0]['tid'];
+    }
+  }else{
+    $tidd = "front";
+  }
 ?>
 
 <div class="background-<?php print $tidd; ?>">
@@ -74,10 +78,8 @@
 
           <!--/.l-header-region -->
         
-
       </header>
-      <!--/.l-header -->
-
+        
       <?php if (!empty($page['frontpage_gallery'])): ?>
         <!--.l-featured -->
         <section class="l-frontpage-gallery row">
@@ -87,7 +89,6 @@
         </section>
         <!--/.l-featured -->
       <?php endif; ?>
-
 
       <?php if (!empty($page['featured'])): ?>
         <!--.l-featured -->
@@ -148,7 +149,7 @@
             <?php print render($title_suffix); ?>
           <?php endif; ?>
          
-        <div class="<?php print $main_grid_repub; ?> main columns">
+        <div class="<?php print $main_grid; ?> main columns">
           <?php if (!empty($page['highlighted'])): ?>
             <div class="highlight panel callout">
               <?php print render($page['highlighted']); ?>
@@ -193,23 +194,33 @@
         <?php endif; ?>
           
         <?php if (!empty($page['sidebar_second_eventmeta'])): ?>
-          <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second medium-event-meta column visible-for-medium-up sidebar">
-              <?php print render($page['sidebar_second_eventmeta']); ?>
-          </aside>
+          <div role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
+              <aside class="medium-event-meta visible-for-medium-up">
+                  <h5>Fakta</h5>
+                  <?php print render($page['sidebar_second_eventmeta']); ?>
+              </aside>
+              
+          </div>
+          
+        <?php endif; ?>
+        <?php if (!empty($page['sidebar_second'])): ?>
+          <div role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
+              
+              <div>
+                  <?php print render($page['sidebar_second']); ?> 
+              </div>
+          </div>
+          
         <?php endif; ?>
         
-          <?php if (!empty($page['sidebar_second'])): ?>
-          <aside role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
-            <?php print render($page['sidebar_second']); ?>
-          </aside>
-        <?php endif; ?>
+          
       </main>
       <!--/.l-main -->
 
       <?php if (!empty($page['triptych_first']) || !empty($page['triptych_middle']) || !empty($page['triptych_last'])): ?>
         <!--.triptych-->
         <section class="l-triptych row">
-          <div class="triptych-first medium-12 columns">
+          <div class="triptych-first medium-12 column">
             <?php print render($page['triptych_first']); ?>
           </div>
           
@@ -217,78 +228,82 @@
         <!--/.triptych -->
       <?php endif; ?>
 
-      <?php if (!empty($page['footer_firstcolumn']) || !empty($page['footer_secondcolumn']) || !empty($page['footer_thirdcolumn']) || !empty($page['footer_fourthcolumn'])): ?>
-        
+        <!--start foot--><div class="foot row">
+        <?php if (!empty($page['footer_firstcolumn']) || !empty($page['footer_secondcolumn']) || !empty($page['footer_thirdcolumn']) || !empty($page['footer_fourthcolumn'])): ?>
         <!--.footer-columns -->
-        <div class="footer-wrapper">
-          
-          <section class="l-footer-columns row">
-            <?php if (!empty($page['footer_firstcolumn'])): ?>
-              <div class="footer-first medium-3 columns">
-                <?php print render($page['footer_firstcolumn']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (!empty($page['footer_secondcolumn'])): ?>
-              <div class="footer-second medium-3 columns">
-                <?php print render($page['footer_secondcolumn']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (!empty($page['footer_thirdcolumn'])): ?>
-              <div class="footer-third medium-3 columns">
-                <?php print render($page['footer_thirdcolumn']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (!empty($page['footer_fourthcolumn'])): ?>
-              <div class="footer-fourth medium-3 columns">
-                <?php print render($page['footer_fourthcolumn']); ?>
-              </div>
-            <?php endif; ?>
-          </section>
+        <div class="footer-wrapper columns">
 
-          <section class="l-footer-columns-bottom row">
-            <?php if (!empty($page['footer_firstcolumn_bottom'])): ?>
-              <div class="footer-first medium-3 columns">
-                <?php print render($page['footer_firstcolumn_bottom']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (!empty($page['footer_secondcolumn_bottom'])): ?>
-              <div class="footer-second medium-3 columns">
-                <?php print render($page['footer_secondcolumn_bottom']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (!empty($page['footer_thirdcolumn_bottom'])): ?>
-              <div class="footer-third medium-3 columns">
-                <?php print render($page['footer_thirdcolumn_bottom']); ?>
-              </div>
-            <?php endif; ?>
-            <?php if (!empty($page['footer_fourthcolumn_bottom'])): ?>
-              <div class="footer-fourth medium-3 columns">
-                <?php print render($page['footer_fourthcolumn_bottom']); ?>
-              </div>
-            <?php endif; ?>
-          </section>
-
-          
-          <!--.l-footer -->
-          <div class="footer-wrapper-bottom">
-            <footer class="l-footer row" role="contentinfo">
-              <?php if (!empty($page['footer'])): ?>
-                <div class="footer columns">
-                  <?php print render($page['footer']); ?>
+            <section class="l-footer-columns row">
+                <?php if (!empty($page['footer_firstcolumn'])): ?>
+                <div class="footer-first medium-3 columns">
+                    <?php print render($page['footer_firstcolumn']); ?>
                 </div>
-              <?php endif; ?>
-            </footer>
-          </div>
-          <!--/.l-footer -->
-          
+                <?php endif; ?>
+                <?php if (!empty($page['footer_secondcolumn'])): ?>
+                <div class="footer-second medium-3 columns">
+                    <?php print render($page['footer_secondcolumn']); ?>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($page['footer_thirdcolumn'])): ?>
+                <div class="footer-third medium-3 columns">
+                    <?php print render($page['footer_thirdcolumn']); ?>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($page['footer_fourthcolumn'])): ?>
+                <div class="footer-fourth medium-3 columns">
+                    <?php print render($page['footer_fourthcolumn']); ?>
+                </div>
+                <?php endif; ?>
+            </section>
+
+            <section class="l-footer-columns-bottom row">
+                <?php if (!empty($page['footer_firstcolumn_bottom'])): ?>
+                <div class="footer-first medium-3 columns">
+                    <?php print render($page['footer_firstcolumn_bottom']); ?>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($page['footer_secondcolumn_bottom'])): ?>
+                <div class="footer-second medium-3 columns">
+                    <?php print render($page['footer_secondcolumn_bottom']); ?>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($page['footer_thirdcolumn_bottom'])): ?>
+                <div class="footer-third medium-3 columns">
+                    <?php print render($page['footer_thirdcolumn_bottom']); ?>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($page['footer_fourthcolumn_bottom'])): ?>
+                <div class="footer-fourth medium-3 columns">
+                    <?php print render($page['footer_fourthcolumn_bottom']); ?>
+                </div>
+                <?php endif; ?>
+            </section>
+
+
+            <!--.l-footer -->
+            <div class="footer-wrapper-bottom">
+                <footer class="l-footer row" role="contentinfo">
+                    <?php if (!empty($page['footer'])): ?>
+                    <div class="footer columns">
+                        <?php print render($page['footer']); ?>
+                    </div>
+                    <?php endif; ?>
+                </footer>
+            </div>
+            <!--/.l-footer -->
+
         </div>
         <!--/.footer-columns-->
-      <?php endif; ?>
+        <?php endif; ?>
 
-      
+
+        </div> <!--ende foot-->
 
       <?php if ($messages && $zurb_foundation_messages_modal): print $messages; endif; ?>
     </div>
+    
     <!--/.page -->
+    
   </div>
+
 
