@@ -130,6 +130,7 @@
       
       
       <!--.l-main -->
+      <!-- // Dessa grejer är lite oklara DEV -->
 
       <?php if ((url($_GET['q']) == "/startsida") || (url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv") || (url($_GET['q']) == "/pressbilder")) : ?>
            <?php $main_grid_repub = "medium-12"; ?>
@@ -139,7 +140,7 @@
           <?php $main_grid_repub = "medium-8"; ?>
       <?php endif; ?>
 
-       
+       <!-- -s- -->
 
       <main role="main" class="row l-main">
         <!-- .l-main region -->

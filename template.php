@@ -214,11 +214,18 @@ function korcentrum_preprocess_page(&$variables) {
   // annars
   
   else {
-    if (drupal_is_front_page()) { // checkar om det är startsidan, för där ligger en tvåspalts vy
-      $wow = 'medium-12';
+    // if (drupal_is_front_page()) { // checkar om det är startsidan, för där ligger en tvåspalts vy
+    //   $wow = 'medium-12';
+    // }else{
+    //   $wow = 'medium-8 medium-centered';
+    // }
+    // Detta borde förbättra se loggen
+    if ((url($_GET['q']) == "/startsida") || (url($_GET['q']) == "/evenemang")){
+      $wow = 'medium-12 new';
     }else{
-      $wow = 'medium-8 medium-centered';
+        $wow = 'medium-8 medium-centered';
     }
+
     $variables['main_grid'] = $wow;
     $variables['sidebar_first_grid'] = '';
     $variables['sidebar_sec_grid'] = '';
