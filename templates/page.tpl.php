@@ -1,23 +1,36 @@
 
 <?php
-  // Logik för bakgrundsbilderna. Bilder och färger sätts i components/background.scss
-// Denna kan man villkora med $node->type == NULL
-// print $node->field_omr_de['und'][0]['tid'];
-// $node is not set for all pages
-// kontrollerar om sidan är en nod
-  if ( !empty($node) ) {
-    $node = node_load($node->nid); 
-    if($node->field_omr_de['und'][0]['tid'] == NULL){
-      $tidd = "normal";
-    }else{
-      $tidd = $node->field_omr_de['und'][0]['tid'];
-    }
+  // Logik för bakgrundsfärger
+// Viktigt att kontrollerr om sidan är en nod och om noden har något värde i fältet för bakgrundfärgen.
+// 
+  $sokvag = url($_GET['q']);
+  if($sokvag == "/blogg"){
+    $defaultColor = "d06539";
+  }elseif($sokvag == "/evenemang"){
+    $defaultColor = "afcfc2";
   }else{
-    $tidd = "front";
+    $defaultColor = "afcfc2";
   }
+
+
+  if ( !empty($node) ) {
+    
+    if($bg_color != NULL){
+      $background = $bg_color;
+    
+    }else{
+      $background = $defaultColor;  
+    }
+
+  }else{
+    $background = $defaultColor;
+  }
+//print "färg ".$bg_color;
+//if ($is_front){
+  //print "=======";
 ?>
 
-<div class="background-<?php print $tidd; ?>">
+<div class="mm" style="background-color: #<?php print $background; ?>">
     
     <!-- Off Canvas Menu -->
     <aside class="left-off-canvas-menu">
@@ -83,9 +96,9 @@
       <?php if (!empty($page['frontpage_gallery'])): ?>
         <!--.l-featured -->
         <section class="l-frontpage-gallery row">
-          
+          <div class="inner">
             <?php print render($page['frontpage_gallery']); ?>
-          
+          </div>
         </section>
         <!--/.l-featured -->
       <?php endif; ?>

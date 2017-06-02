@@ -3,7 +3,8 @@
 /**
  * Implements template_preprocess_html().
  */
-function STARTER_preprocess_html(&$variables) {
+function korcentrum_preprocess_html(&$variables) {
+  
 }
 
 
@@ -21,7 +22,12 @@ function STARTER_preprocess_node(&$variables) {
 
 
 function korcentrum_preprocess_page(&$variables) {
-
+  $node = menu_get_object();
+  if ($node && isset($node->nid)) {
+    $node = node_load($node->nid);
+    node_build_content($node);
+    $variables['bg_color'] = trim(strip_tags(render($node->content['field_backgroundcolor'])));
+  } 
   
 
   $variables['logo_img'] = '';
@@ -219,11 +225,11 @@ function korcentrum_preprocess_page(&$variables) {
     // }else{
     //   $wow = 'medium-8 medium-centered';
     // }
-    // Detta borde förbättra se loggen
+    // Detta borde förbättras, se loggen
     if ((url($_GET['q']) == "/startsida") || (url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv")){
       $wow = 'medium-12 new';
     }else{
-        $wow = 'medium-8 medium-centered';
+      $wow = 'medium-8 medium-centered';
     }
 
     $variables['main_grid'] = $wow;

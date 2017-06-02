@@ -60,7 +60,7 @@
 
 <body class="<?php print $classes; ?>" <?php print $attributes;?>>
   
-<div class="off-canvas-wrap" data-offcanvas>
+  <div class="off-canvas-wrap" data-offcanvas>
     <div class="inner-wrap">
 
   <div class="skip-link">

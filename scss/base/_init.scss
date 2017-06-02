@@ -1,4 +1,4 @@
-//Den mesta utveckling sker i denn fil
+//Den mesta utveckling sker i denna fil 
 
 p{
     margin-bottom: $column-gutter/6;
@@ -7,7 +7,34 @@ p{
 	width: 960px;
 	height: 400px;
 }
-
+.l-frontpage-gallery{
+  
+  .inner{
+    position: relative;  
+    
+    .block-fieldblock-node-page-full-field-bildtext{
+//      height: 100%;
+      position: absolute;
+      left:0;
+      z-index: 99;
+      h2{
+        color: #fff;
+      }
+      p{
+        color: #fff;
+      }
+    }
+    
+    .block-fieldblock-node-page-full-field-bildspel{
+      text-align: right;
+      position: absolute;
+      z-index: 90;
+      right: 0;
+      height: 400px;
+    }
+  }
+    
+}
 .page{
 	/*background: #fff;*/
 	/*padding: 2rem;*/
