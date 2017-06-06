@@ -1,5 +1,4 @@
 //Den mesta utveckling sker i denna fil 
-
 p{
     margin-bottom: $column-gutter/6;
 }
@@ -13,15 +12,26 @@ p{
     position: relative;  
     
     .block-fieldblock-node-page-full-field-bildtext{
-//      height: 100%;
       position: absolute;
-      left:0;
+      left: $column-gutter/2;
+      top: $column-gutter;
       z-index: 99;
-      h2{
-        color: #fff;
+      width: 450px;
+      
+      
+      h1,h2,h3,h4,h5{
+        font-weight: 300;
+        font-size: 3rem;
+        line-height: 3rem;
+        span{
+//          background-color: rgba(0,0,0,0.1);
+//          padding: 4px 8px;
+        }  
+        
       }
       p{
-        color: #fff;
+//        padding: 4px 8px;
+//        background-color: rgba(0,0,0,0.1);
       }
     }
     
@@ -30,15 +40,12 @@ p{
       position: absolute;
       z-index: 90;
       right: 0;
-      height: 400px;
     }
   }
     
 }
-.page{
-	/*background: #fff;*/
-	/*padding: 2rem;*/
-	
+.view-frontpagebanner img{
+  margin-bottom: $column-gutter/4;
 }
 h2.block-title{
 	font-size: 1.2rem;
@@ -48,13 +55,15 @@ h2.block-title{
     border-bottom: 1px $gainsboro solid;
     color: $base;
     font-size: 1rem;
-//    margin-bottom: 1.5rem;
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
 }
 h1{
 	line-height: 3rem;
+}
+h2{
+  line-height: 2.8rem;
 }
 .page-wrapper,  .page{
 
@@ -116,7 +125,7 @@ h1{
 .l-main,.l-featured, .l-triptych{
 	background: $white;
 }
-.l-featured{
+.l-featured,.l-triptych{
 	padding-top: $column-gutter/2;
 }
 .l-header-region .kiv-logo{
@@ -225,11 +234,11 @@ h1{
 }
 aside.medium-event-meta{
     margin-bottom: $column-gutter/2;
-    border-left: 1px solid #bebebe;
+    border: 1px solid #bebebe;
     font-size: 80%;
     font-weight: 300;
 //    margin-left: $column-gutter/2;
-    padding-left: $column-gutter/4 !important;
+    padding: $column-gutter/4 !important;
 }
 aside.medium-event-meta .block{
     margin-bottom: 1px !important;
@@ -433,6 +442,10 @@ li.node-readmore,
     
 	
 }
+.teaser-readmore:hover{
+  background:  $black;
+  color: $white;
+}
 .readmore-wrapper div{
     margin-bottom: $column-gutter/4;
 }
@@ -531,7 +544,7 @@ aside.sidebar-second .block{
 	.l-header-region .kiv-logo{
 		margin-top: 2rem;
 	}
-	
+  
 }
 @media only screen and (min-width: 40.063em) and (max-width: 60em) { 
 	.title-slogan{
@@ -552,7 +565,10 @@ aside.sidebar-second .block{
 		padding-bottom: $column-gutter/2;
 	}
 }
-@media only screen and (max-width: 40em) { 
+@media only screen and (max-width: 40em) {
+  .inner .block-fieldblock-node-page-full-field-bildtext{
+    display: none;
+  }
 	.title-slogan{
 		margin-top: 1rem;
 		text-align: center;

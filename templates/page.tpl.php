@@ -12,7 +12,6 @@
     $defaultColor = "afcfc2";
   }
 
-
   if ( !empty($node) ) {
     
     if($bg_color != NULL){
@@ -25,9 +24,6 @@
   }else{
     $background = $defaultColor;
   }
-//print "färg ".$bg_color;
-//if ($is_front){
-  //print "=======";
 ?>
 
 <div class="mm" style="background-color: #<?php print $background; ?>">
@@ -98,9 +94,23 @@
         <section class="l-frontpage-gallery row">
           <div class="inner">
             <?php print render($page['frontpage_gallery']); ?>
+          
           </div>
         </section>
+      
         <!--/.l-featured -->
+      <?php endif; ?>
+      
+      <?php if ($is_front): ?>
+      <!--.l-featured -->
+      <section class="l-frontpage-gallery row">
+        <div class="inner">
+          
+          <?php print render($page['content']); ?>
+        </div>
+      </section>
+
+      <!--/.l-featured -->
       <?php endif; ?>
 
       <?php if (!empty($page['featured'])): ?>
@@ -111,12 +121,7 @@
           </div>
         </section>
         <!--/.l-featured -->
-      <?php //else: ?>
-        <!-- <section class="l-featured-i row"> -->
-          <!-- <div class="columns"> -->
-            <!-- <div class="invisible-plug"></div> -->
-          <!-- </div> -->
-        <!-- </section>   -->
+      
       <?php endif; ?>
 
       <?php if ($messages && !$zurb_foundation_messages_modal): ?>
@@ -172,13 +177,9 @@
 
           <a id="main-content"></a>
 
-          <?php //if ($breadcrumb): print $breadcrumb; endif; ?>
+          
 
-          <?php //if ($title): ?>
-            <?php //print render($title_prefix); ?>
-            <!-- <h1 id="page-title" class="title"><?php //print $title; ?></h1> -->
-            <?php //print render($title_suffix); ?>
-          <?php //endif; ?>
+          
 
           <?php if (!empty($tabs)): ?>
             <?php print render($tabs); ?>
@@ -196,8 +197,11 @@
                 <?php print render($page['sidebar_second_eventmeta']); ?>
             </aside>
             <?php endif; ?>
-            
-          <?php print render($page['content']); ?>
+          <?php if ($is_front): ?>
+          <?php print render($page['frontpage_content']); ?>
+          <?php else: ?>
+            <?php print render($page['content']); ?>
+          <?php endif; ?>
         </div>
         <!--/.l-main region -->
 

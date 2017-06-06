@@ -53,6 +53,7 @@
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
   <?php print $scripts; ?>
+  
   <!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
@@ -81,6 +82,7 @@
       $(document).foundation();
     })(jQuery, Drupal, this, this.document);
   </script>
+      
   </div>
   </div>
 </body>
