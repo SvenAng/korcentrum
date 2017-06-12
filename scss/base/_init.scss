@@ -7,6 +7,7 @@ p{
 	height: 400px;
 }
 .l-frontpage-gallery{
+  min-height: 300px;
   
   .inner{
     position: relative;  
@@ -223,15 +224,33 @@ h2{
 	padding-left: 8px;
 	line-height: 19px;
     margin-bottom: $column-gutter/6;
-//	color: #999999;
 	font-size: 80%;
 	font-weight: 300;
     padding-bottom: 3px;
+  .item-list{
+    ul{
+      margin: 0;
+      padding: 0;
+      
+      li{
+        display: inline-block;
+        padding: 0 8px;
+        font-size: 0.7rem;
+        background: $base;
+        color: #fff;
+        margin: 0 4px 6px 0;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }  
+  }
+  
 }
 .zf-korcentrum_1col .event-meta{
 	margin-bottom: $column-gutter/2;
 	display: block;
 }
+
 aside.medium-event-meta{
     margin-bottom: $column-gutter/2;
     border: 1px solid #bebebe;
