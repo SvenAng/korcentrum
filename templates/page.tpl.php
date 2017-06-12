@@ -110,9 +110,12 @@
         </div>
       </section>
 
+<<<<<<< HEAD
       <!--/.l-featured -->
       <?php endif; ?>
 
+=======
+>>>>>>> origin/master
       <?php if (!empty($page['featured'])): ?>
         <!--.l-featured -->
         <section class="l-featured row">
