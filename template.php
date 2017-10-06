@@ -27,7 +27,9 @@ function korcentrum_preprocess_page(&$variables) {
     $node = node_load($node->nid);
     node_build_content($node);
     $variables['bg_color'] = trim(strip_tags(render($node->content['field_backgroundcolor'])));
+    //$variables['kropp'] = render($node->content['body']);
   } 
+  
   
 
   $variables['logo_img'] = '';

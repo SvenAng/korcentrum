@@ -110,12 +110,10 @@
         </div>
       </section>
 
-<<<<<<< HEAD
       <!--/.l-featured -->
       <?php endif; ?>
 
-=======
->>>>>>> origin/master
+
       <?php if (!empty($page['featured'])): ?>
         <!--.l-featured -->
         <section class="l-featured row">
@@ -162,14 +160,26 @@
       <?php endif; ?>
 
        <!-- -s- -->
-
+      <?php if (!empty($tabs)): ?>
+      <div class="row">
+        <div class="colums large-12">
+        <?php print render($tabs); ?>
+        <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
+      </div>
+      </div>
+      <?php endif; ?>
+      
+      <?php if($title !="none"):?>
       <main role="main" class="row l-main">
         <!-- .l-main region -->
-        <?php if ($title): ?>
-            <?php print render($title_prefix); ?>
-            <h1 id="page-title" class="title columns small-12 <?php print $main_grid_repub; ?>"><?php print $title; ?></h1>
-            <?php print render($title_suffix); ?>
-          <?php endif; ?>
+       
+          <?php if ($title): ?>
+            
+              <?php print render($title_prefix); ?>
+                <h1 id="page-title" class="title columns small-12 <?php print $main_grid_repub; ?>"><?php print $title; ?></h1>
+              <?php print render($title_suffix); ?>
+            <?php endif; ?>
+          
          
         <div class="<?php print $main_grid; ?> main columns">
           <?php if (!empty($page['highlighted'])): ?>
@@ -184,10 +194,7 @@
 
           
 
-          <?php if (!empty($tabs)): ?>
-            <?php print render($tabs); ?>
-            <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
-          <?php endif; ?>
+          
 
           <?php if ($action_links): ?>
             <ul class="action-links">
@@ -201,8 +208,9 @@
             </aside>
             <?php endif; ?>
           <?php if ($is_front): ?>
-          <?php print render($page['frontpage_content']); ?>
+            <?php print render($page['frontpage_content']); ?>
           <?php else: ?>
+          
             <?php print render($page['content']); ?>
           <?php endif; ?>
         </div>
@@ -237,7 +245,7 @@
           
       </main>
       <!--/.l-main -->
-
+      <?php endif; ?>
       <?php if (!empty($page['triptych_first']) || !empty($page['triptych_middle']) || !empty($page['triptych_last'])): ?>
         <!--.triptych-->
         <section class="l-triptych row">

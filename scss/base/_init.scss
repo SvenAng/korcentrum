@@ -15,24 +15,17 @@ p{
     .block-fieldblock-node-page-full-field-bildtext{
       position: absolute;
       left: $column-gutter/2;
-      top: $column-gutter;
+      top: $column-gutter/1.5;
       z-index: 99;
       width: 450px;
-      
+      p{
+        line-height: 1.4rem;
+      } 
       
       h1,h2,h3,h4,h5{
         font-weight: 300;
         font-size: 3rem;
         line-height: 3rem;
-        span{
-//          background-color: rgba(0,0,0,0.1);
-//          padding: 4px 8px;
-        }  
-        
-      }
-      p{
-//        padding: 4px 8px;
-//        background-color: rgba(0,0,0,0.1);
       }
     }
     
@@ -56,10 +49,7 @@ h2.block-title{
     border-bottom: 1px $gainsboro solid;
     color: $base;
     font-size: 1rem;
-<<<<<<< HEAD
-=======
-//    margin-bottom: 1.5rem;
->>>>>>> origin/master
+
 }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
@@ -228,10 +218,7 @@ h2{
 	padding-left: 8px;
 	line-height: 19px;
     margin-bottom: $column-gutter/6;
-<<<<<<< HEAD
-=======
-//	color: #999999;
->>>>>>> origin/master
+
 	font-size: 80%;
 	font-weight: 300;
     padding-bottom: 3px;
@@ -250,6 +237,7 @@ h2{
         text-transform: uppercase;
         letter-spacing: 0.5px;
       }
+      
     }  
   }
   
