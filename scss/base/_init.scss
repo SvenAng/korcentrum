@@ -548,8 +548,43 @@ aside.sidebar-second .block{
     padding-right: 0;
 }
 
-
-
+.ljudspelare{
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  
+  .description{
+    font-style: italic;
+    color: $charcoal;
+    margin-bottom: 0.7rem;
+  }
+}
+.sidebar-second{
+  a.active{
+    color: $black;
+  }
+  a:hover{
+    color: $black;
+  }
+  .bloggare-pres{
+    margin-top: $column-gutter/2;
+    border-left: 1px solid #bebebe;
+    padding-left: 1.3rem;
+    line-height: 19px;
+    margin-bottom: $column-gutter;
+    font-size: 80%;
+    font-weight: 300;
+    padding-bottom: $column-gutter/2;
+    img{
+      margin-bottom: $column-gutter/2;
+    }
+  }
+}
+.view-bloggare-forfattare{
+  .field-content::before{
+    content: "\203A";
+    padding-right: $column-gutter/3;
+  }
+}
 /*Overrides, extra mediaqueries*/
 
 @media only screen and (min-width: 60.063em){ 
