@@ -173,12 +173,11 @@
       <main role="main" class="row l-main">
         <!-- .l-main region -->
        
-          <?php if ($title): ?>
-            
-              <?php print render($title_prefix); ?>
-                <h1 id="page-title" class="title columns small-12 <?php print $main_grid_repub; ?>"><?php print $title; ?></h1>
-              <?php print render($title_suffix); ?>
-            <?php endif; ?>
+        <?php if ($title): ?>
+            <?php print render($title_prefix); ?>
+            <h1 id="page-title" class="title columns small-12 <?php print $main_grid_repub; ?>"><?php print $title; ?></h1>
+            <?php print render($title_suffix); ?>
+        <?php endif; ?>
           
          
         <div class="<?php print $main_grid; ?> main columns">
@@ -190,11 +189,7 @@
 
           <a id="main-content"></a>
 
-          
 
-          
-
-          
 
           <?php if ($action_links): ?>
             <ul class="action-links">
@@ -207,8 +202,9 @@
                 <?php print render($page['sidebar_second_eventmeta']); ?>
             </aside>
             <?php endif; ?>
-          <?php if ($is_front): ?>
-            <?php print render($page['frontpage_content']); ?>
+        
+            <?php if ($is_front): ?>
+                <?php print render($page['frontpage_content']); ?>
           <?php else: ?>
           
             <?php print render($page['content']); ?>

@@ -20,7 +20,9 @@ output_style = :compressed
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
 # line_comments = false
-line_comments = true
+line_comments = false
+sourcemap = false
+
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:

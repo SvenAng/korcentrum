@@ -228,8 +228,11 @@ function korcentrum_preprocess_page(&$variables) {
     //   $wow = 'medium-8 medium-centered';
     // }
     // Detta borde förbättras, se loggen
-    if ((url($_GET['q']) == "/startsida") || (url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv")){
+    if ((url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv")){
       $wow = 'medium-12 new';
+    }elseif ((url($_GET['q']) == "/startsida")){
+        $wow = 'large-9 medium-12 new2';
+    
     }else{
       $wow = 'medium-8 medium-centered';
     }
