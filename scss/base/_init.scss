@@ -64,6 +64,10 @@ p {
 
         }
     }
+    .mozaik-event .mozaik h3{
+        font-weight: 700 !important;
+        font-size: 1.5rem !important;
+    }
 }
 
 
@@ -78,8 +82,8 @@ h2.block-title {
 
 .triptych-first h2.block-title {
     border-bottom: 1px $gainsboro solid;
-    color: $base;
-    font-size: 1rem;
+//    color: $base;
+//    font-size: 1rem;
 
 }
 
@@ -236,13 +240,25 @@ h2 {
     padding-top: $column-gutter/2;
 }
 
+.mozaik {}
+
 .mozaik-event {
-    padding-top: $column-gutter/2;
+    padding-top: $column-gutter/4;
+
+    .columns {
+        padding-bottom: $column-gutter/2;
+    }
+
+    .event-meta {
+        .mozaik-date {
+            font-weight: 400;
+        }
+    }
 
 }
 
 .mozaik-event .views-row-mozaik {
-    padding-bottom: $column-gutter/2;
+    //    padding-bottom: $column-gutter/2;
 }
 
 .mozaik-event .mozaik h3 {
@@ -256,7 +272,7 @@ h2 {
     border-bottom: 1px solid $primary-color;
     color: $primary-color;
     //	text-transform: capitalize;
-    margin-bottom: $column-gutter/2;
+        margin-bottom: $column-gutter/2;
 }
 
 .mozaik-event a p {
@@ -264,7 +280,9 @@ h2 {
 }
 
 .mozaik-event .mozaik-image {
-    margin-bottom: $column-gutter/2;
+    margin-bottom: $column-gutter/4;
+    width: 100% !important;
+    height: auto;
 }
 
 .mozaik-event .mozaik a {
@@ -278,7 +296,7 @@ h2 {
     border-left: 1px solid #bebebe;
     padding-left: 8px;
     line-height: 19px;
-    margin-bottom: $column-gutter/6;
+    margin-bottom: $column-gutter/9;
 
     font-size: 80%;
     font-weight: 300;
@@ -305,6 +323,27 @@ h2 {
 
 }
 
+.event-tagging {
+    .item-list {
+        ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+                display: inline-block;
+                padding: 0 8px;
+                font-size: 0.7rem;
+                background: $base;
+                color: #fff;
+                margin: 0 4px 6px 0;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+        }
+    }
+}
+
 .zf-korcentrum_1col .event-meta {
     margin-bottom: $column-gutter/2;
     display: block;
@@ -327,9 +366,7 @@ aside.medium-event-meta .block {
 
 .mozaik-event .mozaik-date {}
 
-.mozaik-event .mozaik .mozaik-plats {
-
-}
+.mozaik-event .mozaik .mozaik-plats {}
 
 .field-name-field-datum,
 .field-name-field-plats,
