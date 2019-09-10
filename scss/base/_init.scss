@@ -1,4 +1,5 @@
 //Den mesta utveckling sker i denna fil UPPDATERAD 13/8 2019 
+@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 p {
     margin-bottom: $column-gutter/6;
 }
@@ -31,7 +32,7 @@ p {
             h4,
             h5 {
                 font-weight: 300;
-                font-size: 3rem;
+                font-size: 2.8rem;
                 line-height: 3rem;
             }
 
@@ -103,7 +104,39 @@ h1 {
 h2 {
     line-height: 2rem;
 }
-
+.view-startsida{
+	p:last-child{
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+	}
+	
+	a#knapp-newsletter{
+		background: white;
+		padding: 0.5rem 0.7rem;
+		
+		border-radius: 0.3rem;
+		text-align: right;
+		font-size: 0.9rem;
+		
+	}
+	a#knapp-newsletter:hover{
+			background: black;
+			color: white;
+	}
+	a#knapp-newsletter::before{
+		font-family: "Font Awesome 5 Free";
+/*
+        -webkit-font-smoothing: antialiased;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        font-weight: 500;
+*/
+		content: "\f2b6";
+		padding-right: 0.4rem;
+		
+	}
+}
 .page-wrapper,
 .page {}
 
