@@ -447,6 +447,8 @@ aside.medium-event-meta .block {
     /*border-top: 1px solid #e5e5e5;*/
     padding-top: $column-gutter/2;
     margin-top: $column-gutter/2;
+    display: flex;
+    justify-content: space-around;
 }
 
 .l-footer-columns .footer-fourth .block {
@@ -873,5 +875,8 @@ aside.sidebar-second .block {
     .node-blogg-f-rfattare .columns {
         padding: 0;
 
+    }
+    .l-footer-columns-bottom{
+        display: block;
     }
 }

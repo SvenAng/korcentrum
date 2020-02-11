@@ -70,7 +70,7 @@
               </div>
 
               <div class="columns small-12 medium-3 large-3 kiv-logo">
-                <a href="http://kulturivast.se" target="_blank"><img src="/sites/all/themes/korcentrum/images/kivlogo.png"></a>
+
               </div>        
               
               
@@ -281,24 +281,24 @@
                 <?php endif; ?>
             </section>
 
-            <section class="l-footer-columns-bottom row">
+            <section class="l-footer-columns-bottom">
                 <?php if (!empty($page['footer_firstcolumn_bottom'])): ?>
-                <div class="footer-first medium-3 columns">
+                <div class="footer-first">
                     <?php print render($page['footer_firstcolumn_bottom']); ?>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($page['footer_secondcolumn_bottom'])): ?>
-                <div class="footer-second medium-3 columns">
+                <div class="footer-second ">
                     <?php print render($page['footer_secondcolumn_bottom']); ?>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($page['footer_thirdcolumn_bottom'])): ?>
-                <div class="footer-third medium-3 columns">
+                <div class="footer-third ">
                     <?php print render($page['footer_thirdcolumn_bottom']); ?>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($page['footer_fourthcolumn_bottom'])): ?>
-                <div class="footer-fourth medium-3 columns">
+                <div class="footer-fourth">
                     <?php print render($page['footer_fourthcolumn_bottom']); ?>
                 </div>
                 <?php endif; ?>
