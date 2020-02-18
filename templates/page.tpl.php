@@ -88,7 +88,14 @@
           <!--/.l-header-region -->
         
       </header>
-        
+        <?php if (!empty($tabs)): ?>
+        <div class="row">
+            <div class="colums large-12">
+                <?php print render($tabs); ?>
+                <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
+            </div>
+        </div>
+        <?php endif; ?>
       <?php if (!empty($page['frontpage_gallery'])): ?>
         <!--.l-featured -->
         <section class="l-frontpage-gallery row">
@@ -160,14 +167,7 @@
       <?php endif; ?>
 
        <!-- -s- -->
-      <?php if (!empty($tabs)): ?>
-      <div class="row">
-        <div class="colums large-12">
-        <?php print render($tabs); ?>
-        <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
-      </div>
-      </div>
-      <?php endif; ?>
+      
       
       <?php if($title !="none"):?>
       <main role="main" class="row l-main">

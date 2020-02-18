@@ -613,7 +613,7 @@ li.node-readmore,
 }
 
 .teaser-readmore:hover {
-    background: $black;
+    background: $alert-color;
     color: $white;
 }
 
@@ -736,7 +736,7 @@ aside.sidebar-second .block {
     }
 
     a:hover {
-        color: $black;
+//        color: $black;
     }
 
     .bloggare-pres {
@@ -759,6 +759,39 @@ aside.sidebar-second .block {
     .field-content::before {
         content: "\203A";
         padding-right: $column-gutter/3;
+    }
+}
+
+
+// Input forms
+
+.page-node-edit, .page-node-add{
+    label, legend span{
+//        font-size: 1.2rem;
+//        font-weight: bold;
+//        color: orange;
+        font-weight: bold ;
+        margin-bottom: 0.5rem;
+    }
+    label.option{
+        color: inherit;
+        font-weight: inherit;
+    }
+    .fieldset-description{
+        font-style: italic;
+        color: gray;
+        font-size: 0.85rem;
+        
+    }
+    button{
+        padding:  0.1rem 0.5rem  0.2rem 0.5rem;
+        margin-top: 1rem !important;
+        border-radius: 3px;
+    }
+    .has-tip{
+        font-style: italic;
+        color: gray;
+        font-size: 0.85rem;
     }
 }
 
