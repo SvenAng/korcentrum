@@ -240,10 +240,10 @@ function korcentrum_preprocess_page(&$variables) {
     if ((url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv")){
       $wow = 'medium-12 new';
     }elseif ((url($_GET['q']) == "/startsida")){
-        $wow = 'large-9 medium-12 new2 d';
+        $wow = 'large-9 medium-12 new2';
     
     }else{
-      //$wow = 'medium-8 medium-centered';
+      $wow = 'medium-9';
     }
 
     $variables['main_grid'] = $wow;
