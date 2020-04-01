@@ -160,8 +160,8 @@
 
       <?php if ((url($_GET['q']) == "/startsida") || (url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv") || (url($_GET['q']) == "/pressbilder")) : ?>
            <?php $main_grid_repub = "medium-12"; ?>
-      <?php elseif(empty($page['sidebar_second']) && (url($_GET['q']) != "/startsida")): ?>     
-          <?php $main_grid_repub = "medium-8 medium-centered"; ?>
+        <?php elseif(empty($page['sidebar_second']) && empty($page['sidebar_second_eventmeta'])  && (url($_GET['q']) != "/startsida")): ?>     
+          <?php $main_grid_repub = "medium-8 medium-centered dd"; ?>
       <?php else: ?>
           <?php $main_grid_repub = "medium-8"; ?>
       <?php endif; ?>
@@ -199,7 +199,7 @@
         
             <?php if (!empty($page['sidebar_second_eventmeta'])): ?>
             <aside role="complementary" class="small-event-meta visible-for-small-down">
-                <?php print render($page['sidebar_second_eventmeta']); ?>
+                yy<?php print render($page['sidebar_second_eventmeta']); ?>
             </aside>
             <?php endif; ?>
         
@@ -222,7 +222,7 @@
           <div role="complementary" class="<?php print $sidebar_sec_grid; ?> sidebar-second columns sidebar">
               <aside class="medium-event-meta visible-for-medium-up">
                   <h5>Fakta</h5>
-                  <?php print render($page['sidebar_second_eventmeta']); ?>
+                 <?php print render($page['sidebar_second_eventmeta']); ?>
               </aside>
               
           </div>

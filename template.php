@@ -199,6 +199,10 @@ function korcentrum_preprocess_page(&$variables) {
   if (!empty($variables['page']['sidebar_second'])) {
     $right = $variables['page']['sidebar_second'];
   }
+    if (!empty($variables['page']['sidebar_second_eventmeta'])) {
+        $right_event = $variables['page']['sidebar_second_eventmeta'];
+    }
+    // sidebar_second_eventmeta
 
   // Dynamic sidebars.
   // om det finns i vänster och höger
@@ -208,11 +212,16 @@ function korcentrum_preprocess_page(&$variables) {
     $variables['sidebar_sec_grid'] = 'medium-3';
   }
   // tomt i vänster finns i höger
-  elseif (empty($left) && !empty($right)) {
+    elseif (empty($left) && !empty($right)) {
     $variables['main_grid'] = 'medium-8';
     $variables['sidebar_first_grid'] = '';
     $variables['sidebar_sec_grid'] = 'medium-4';
   }
+    elseif (empty($left) && !empty($right_event)) {
+        $variables['main_grid'] = 'medium-8';
+        $variables['sidebar_first_grid'] = '';
+        $variables['sidebar_sec_grid'] = 'medium-4';
+    }
   // finns i vänster tomt i höger
   elseif (!empty($left) && empty($right)) {
     $variables['main_grid'] = 'medium-9 medium-push-3';
@@ -231,10 +240,10 @@ function korcentrum_preprocess_page(&$variables) {
     if ((url($_GET['q']) == "/evenemang") || (url($_GET['q']) == "/evenemang-arkiv")){
       $wow = 'medium-12 new';
     }elseif ((url($_GET['q']) == "/startsida")){
-        $wow = 'large-9 medium-12 new2';
+        $wow = 'large-9 medium-12 new2 d';
     
     }else{
-      $wow = 'medium-8 medium-centered';
+      //$wow = 'medium-8 medium-centered';
     }
 
     $variables['main_grid'] = $wow;
